@@ -16,7 +16,8 @@ const fillComments = (state, action) => {
                         localStorage.setItem('comments', newComs);
                     }
                     else {
-                        updState.splice(action.id, action.id);
+                        let i = updState.indexOf(com)
+                        updState.splice(i, i);
                         let newComs = JSON.stringify(updState);
                         localStorage.setItem('comments', newComs);
                     }

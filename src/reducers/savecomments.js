@@ -2,7 +2,10 @@ import {actualDate} from './actualdate.js';
 import {checkTags} from './check-tags.js';
 
 export function saveComment(allComments){
-	let id = allComments.length;
+	let id = 0;
+	if (allComments.length > 0){
+		id = allComments[allComments.length - 1].id +1;
+	}
 	const author = document.querySelector('.author-field');
 	const text = document.querySelector('.text-field');
 	checkTags(author);
